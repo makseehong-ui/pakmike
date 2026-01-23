@@ -1,0 +1,8 @@
+{
+  "name": "Pakmike Technology Services",
+  "description": "A premium security and electrical service application for homes and businesses in Penang.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
