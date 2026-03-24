@@ -1,28 +1,10 @@
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { SERVICES, BRANCHES, PHONE_NUMBER } from '../constants';
-import { getHealth } from '../api-client';
 
 const HomeScreen: React.FC = () => {
-  const [apiStatus, setApiStatus] = useState<'loading' | 'ok' | 'error'>('loading');
-
-  useEffect(() => {
-    getHealth()
-      .then(() => setApiStatus('ok'))
-      .catch(() => setApiStatus('error'));
-  }, []);
-
   return (
     <div className="flex flex-col">
-      {/* API Status Banner */}
-      <div className={`text-[10px] text-center py-1 font-bold uppercase tracking-tighter transition-colors ${apiStatus === 'ok' ? 'bg-green-500/20 text-green-600' :
-        apiStatus === 'error' ? 'bg-red-500/20 text-red-600' :
-          'bg-slate-500/10 text-slate-400'
-        }`}>
-        {apiStatus === 'ok' ? '● Backend Linked' : apiStatus === 'error' ? '○ Backend Disconnected' : '○ Checking Connection...'}
-      </div>
-
       {/* Hero Section */}
       <div className="relative">
         <div
